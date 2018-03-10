@@ -1,1 +1,1 @@
-# CF template
+SMG Website
