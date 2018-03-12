@@ -1,3 +1,21 @@
 * {
-  outline: 1px solid red;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+/* each section in a container-fluid */
+/* no padding for container-fluid */
+.no-padding {
+  padding: 0;
+}
+
+/* each section has a background image that completely covers div */
+.background-img-total-cover {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
