@@ -1,16 +1,104 @@
+/* global */
+
 * {
   box-sizing: border-box;
 }
-
 body, html {
-  height: 100%;
+  /* don't know why height needs to be 100%; so I commented out*/
+  /* height: 100%; */
 }
-
+body {
+  /* don't know why position needs to be relative; so I commented out*/
+  /* position: relative; */
+}
+#navbar-top-div-filler {
+  height: 50px;
+}
+.anchor {
+  /* add anchor to account for navbar height when clicking on navbar links */
+  position: relative;
+  bottom: 50px;
+}
+body {
+  font-weight: 300;
+  background: #F5F5F5;
+  font-size: 1.6em;
+  font-family: 'Lato', sans-serif;
+  color: #868c8e;
+  /* line-height: 22px; */
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  text-align: center;
+}
 /* each section in a container-fluid */
 /* no padding for container-fluid */
 .no-padding {
   padding: 0;
 }
+/* rows by default have a left and right margin of -15 and will conflict with .no-padding. */
+/* must set to 0px so that all sections cover entire width */
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.generalmargins {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.shortermargins {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.center-image img {
+  display: block;
+  margin: auto;
+}
+.section-hero {
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 575px){
+  .section-hero {
+    height: 350px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px){
+  .section-hero {
+    height: 400px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .section-hero {
+    height: 450px;
+  }
+}
+@media (min-width: 992px) {
+  .section-hero {
+    height: 500px;
+  }
+}
+
+.section-visible-text {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  color: #F5F5F5;
+  font-size: 4em;
+  opacity: .9;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.3);
+}
+.center-text{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* backgrounds */
 
 /* each section has a background image that completely covers div */
 .background-img-total-cover {
@@ -18,4 +106,513 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* optional background images or colors */
+
+/* index_section  */
+#background-1 {
+  background-image: url('../img/wallpaper/sitehero.jpg');
+  /* height: 80vh; */
+}
+/* about_section */
+#background-2 {
+
+}
+/* primaryCare_section */
+#background-3 {
+  background: #fff;
+}
+/* cardiology_section */
+#background-4 {
+  background: #fff;
+}
+/* acupuncture_section */
+#background-5 {
+  background: #fff;
+}
+/* contact_section */
+#background-6 {
+
+}
+/* forms_section */
+#background-7 {
+
+}
+
+
+
+
+
+/* navbar */
+#site_navbar .patientPortal a {
+  text-decoration: none;
+  color: #868c8e;
+}
+#site_navbar a:hover {
+  color: #5b82ab; /* change color on hover */
+  text-decoration: none; /* get rid of underline when hovering over link */
+}
+#site_navbar a {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 600ms; /* delay transition of pseudo-class */
+  -webkit-transition: color 600ms; /* for older browser versions */
+}
+.navbar {
+  /* make navbar background white so it blends with logo */
+  background-color: white;
+}
+#site_navbar a.navbar-brand {
+  /* logo is 30px high, so make padding 10 so logo in the center of navigation bar, which has a height of 50px */
+  padding: 10px;
+}
+.navbar-inverse .navbar-nav>li>a {
+  /* set color of link text in navbar. 868c8e is the default color */
+  color: #868c8e;
+}
+.navbar, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  /* get rid of all black borders when navbar is in normal state and when it's collapsed */
+  border: none;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  /* set background and text color of active link */
+  background-color: #F5F5F5;
+  color: #5b82ab;
+}
+.navbar-inverse .navbar-toggle {
+  /* get rid of border of navbar button that appears on smaller screens */
+  border: none;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  /* change color of the 3 stacked icon bars on navbar button that appears on smaller screens */
+  background-color: black;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  /* get rid of background color when focusing or hovering on navbar toggle */
+  background-color: white;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+  /* if link with submenu on navbar has submenu visible and you scroll, defaults to color white and background black. this sets those colors  */
+  color: #5b82ab;
+  background-color: #F5F5F5;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a, .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover {
+  /* active submenu items are color white and background blue by default. This overrides them */
+  color: #5b82ab;
+  background-color: #F5F5F5;
+}
+.dropdown-menu>li>a {
+  /* font-weight by default is 400, this resets weight consistent with other navbar links */
+  font-weight: 300;
+  /* submenu item is also color #333 on main navbar, this fixes it */
+  color: #868c8e;
+}
+.dropdown-menu {
+  /* removes the black border of submenu */
+  border: none;
+}
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+  /* if any link is selected and you scroll, defaults to color white. this sets that color  */
+  color: #868c8e;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+  /* if you select a submenu item on navbar toggle, then scroll out, color turns white, this fixes the color */
+  color: #868c8e;
+  /* hovering on submenu item will change background color, this does not change background color on hover */
+  background-color: transparent;
+}
+
+
+
+
+
+/* footer */
+/*sticky-footer*/
+/*this ensures that footer won't cover up body content's bottom 50px*/
+.footer-anchor {
+  height:50px;
+}
+.site-footer {
+  opacity: 1;
+  background-color: rgba(0,0,0,0.6);
+  color: #F5F5F5;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+}
+.site-footer .row {
+  padding: 3px 0px;
+}
+.site-footer a {
+  color: #F5F5F5;
+  text-decoration: none;
+}
+#footer-left {
+  padding: 0;
+}
+#footer-right {
+  text-align: right;
+  padding: 0;
+}
+@media (max-width: 575px){
+  .site-footer .row {
+    font-size: .75em;
+    padding: 8px 0px;
+  }
+}
+
+
+
+
+
+/* Index_section */
+
+/* title text colors */
+#index_section {
+  color: #F5F5F5;
+}
+/* title text placement over background image */
+#index_section .text-placement {
+  position: relative; /* Place element (.text-placement) relative to its parent element(#index_section) */
+  top: 45%;
+  text-align: center;
+  background: rgba(0,0,0,.2);
+}
+#index_section i {
+  color: #5b82ab;
+}
+/* services buttons */
+#index_section .buttonsContainer {
+  position: relative;
+  max-width: 500px;
+  top: 50%;
+  margin: 0 auto;
+  text-align: center;
+  /* font-size: 1.2em; */
+}
+#index_section .col-sm-4 {
+  padding: 0px;
+}
+#index_section .indexbutton {
+  border: 1px solid #5b82ab;
+  background: rgba(0,0,0,.3);
+  border-radius: 5px;
+  width: 140px;
+  height: 50px;
+  padding: 10px;
+  margin: 10px auto;
+}
+#index_section a {
+  text-decoration: none;
+  color: #F5F5F5;
+}
+#index_section .indexbutton:hover {
+ background-color: #5b82ab;
+}
+#index_section .indexbutton {
+  transition: background-color 600ms;
+  -webkit-transition: background-color 600ms;
+}
+/* title text resizing based on screen width using media queries */
+@media (max-width: 767px){
+  #index_section .text-placement {
+    font-size: 1.9em;
+    top: 25%;
+  }
+  #index_section .buttonsContainer {
+    width: 145px;
+    top: 30%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  #index_section .text-placement {
+    font-size: 2.7em;
+  }
+}
+@media (min-width: 992px) {
+  #index_section .text-placement {
+    font-size: 3.5em;
+  }
+}
+
+
+
+
+
+/* about_section */
+/* hero image */
+#about_section .section-hero {
+  background-image: url('../img/wallpaper/about.jpg');
+}
+/* our story and read more link to reveal rest of text */
+.reveal-text {
+  padding: 0px 50px 15px 50px;
+  max-height: 150px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.reveal-text .read-more {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 75px 0px 0px;
+
+  /* "transparent" only works here because == rgba(0,0,0,0) */
+  /* background-image: linear-gradient(to bottom, transparent, white 85%); */
+  /* on ios, transparent translated to transparent black so use the following instead*/
+  /* first convert hex to rgb */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, rgba(245,245,245,0)),
+    color-stop(85%, rgba(245,245,245,100)));
+  }
+/* style link and remove underline */
+.read-more a {
+  color: #384656;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* providers section */
+.provider-grid {
+  /* outline: 2px solid red; */
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+.provider-cell {
+  /* outline: 1px solid black; */
+  padding: 5px;
+}
+.provider-card {
+  /* outline: 1px solid yellow; */
+  margin: 0 auto;
+  width: 275px;
+  height: 375px;
+  background: white;
+  border-radius: 4px;
+
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  transition: all 0.3s ease-in-out;
+}
+.provider-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 4px;
+  /* box-shadow: h-offset v-offset blur color */
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+/* Scale up the box */
+.provider-card:hover {
+  /* glitch: navbar and footer shift slightly on hover */
+  /* transform: scale(1.01, 1.01); */
+}
+/* Fade in the pseudo-element with the bigger shadow */
+.provider-card:hover::after {
+  opacity: 1;
+}
+.provider-card-content {
+  position: absolute;
+}
+.provider-card img {
+  border-radius: 4px 4px 0 0;
+}
+.provider-card-text {
+  padding: 15px;
+  text-align: center;
+}
+/* select a provider cell in devtools and resize until margins are 0 */
+/* then get width of browser, use that width for the media queries */
+/* this assures cards are equal distance from each other horizontally across all widths*/
+/* xs screen doesn't matter since it's 1 card per line */
+/* adjust this when you change width of provider-card or col attributes in grid system*/
+/* be sure bottom scrollbar doesn't appear on browser as you resize. */
+/* this happens when width of provider grid exceeds min browser width */
+/* @media (max-width: 767px) {
+  .provider-grid {
+    width: 350px;
+  }
+} */
+@media (min-width: 768px) and (max-width: 991px){
+  .provider-grid {
+    width: 570px;
+  }
+}
+/* @media (min-width: 992px) and (max-width: 1199px){ */
+@media (min-width: 992px) {
+  .provider-grid {
+    width: 855px;
+  }
+}
+/* @media (min-width: 1200px) {
+  .provider-grid {
+    width: 1185px;
+  }
+} */
+
+/* modals */
+
+.modal {
+  background: rgba(0,0,0,.6);
+}
+.provider-modal-content {
+  background: transparent;
+  box-shadow: none;
+  border: 0px;
+  color: white;
+  /* margin: 50px; */
+}
+.provider-cell a {
+  text-decoration: none;
+  color: inherit;
+}
+.modal-header {
+  padding-left: 0;
+}
+#about_section .modal-header .close, #about_section .modal-footer .close {
+  font-size: 20px;
+  color: white;
+  text-shadow: none;
+  opacity: 1;
+}
+
+
+
+
+
+/* primaryCare_section */
+#primaryCare-hero {
+  /* height: 350px; */
+  background-image: url('../img/wallpaper/pchero.jpg');
+}
+#primaryCare_section .section-visible-text {
+  /* opacity: .9; */
+  /* background: rgba(0,0,0,.3); */
+}
+#primaryCare_section a {
+  color: inherit;
+  text-decoration: none;
+}
+#primaryCare_section .servicescontent {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* cardiology_section */
+#cardiology-hero {
+  /* height: 350px; */
+  background-image: url('../img/wallpaper/cardiology.jpg');
+}
+#cardiology_section .section-visible-text {
+  /* opacity: .9; */
+  background: rgba(0,0,0,0);
+}
+#cardiology_section a {
+  color: inherit;
+  text-decoration: none;
+}
+#cardiology_section .servicescontent {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* acupuncture_section */
+#acupuncture-hero {
+  /* height: 350px; */
+  background-image: url('../img/wallpaper/acupuncture.jpg');
+}
+#acupuncture_section .section-visible-text {
+  font-size: 3em;
+  /* opacity: .9; */
+  background: rgba(0,0,0,.1);
+}
+#acupuncture_section a {
+  color: inherit;
+  text-decoration: none;
+}
+#acupuncture_section .servicescontent {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* contact_section */
+/* hero image */
+#contact-hero {
+  background-image: url('../img/wallpaper/contactus.jpg');
+  height: 390px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contact_section .section-visible-text {
+  /* font-family: inherit; */
+  background: rgba(0,0,0,.5);
+}
+#contact_section h1, #contact_section h3, #contact_section h4 {
+  color: #F5F5F5;
+}
+#contact_section a {
+  color: #F5F5F5;
+  text-decoration: none;
+}
+/* google maps */
+#contactAddressMap {
+  height: 300px;
+  width: 100%;
+}
+
+
+
+
+
+/* forms_section */
+/* services buttons */
+#forms_section .buttonsContainer {
+  text-align: center; /* text centered in button */
+  max-width: 653px; /* prevent buttons from separating too far horizontally as browser width increases */
+  margin: 0 auto;
+}
+#forms_section .formbutton {
+  border: 1px solid #5b82ab;
+  border-radius: 5px;
+  background: rgba(0,0,0,.3);
+  /* if you change width, height, adjust max-width div containing buttons */
+  width: 200px;
+  height: 100px;
+  padding: 5px;
+  margin: 10px auto; /* center button horizontally within cell */
+}
+#forms_section a {
+  text-decoration: none;
+  color: #F5F5F5;
+}
+#forms_section .formbutton:hover {
+ background-color: #5b82ab;
+}
+#forms_section .formbutton {
+  transition: background-color 600ms;
+  -webkit-transition: background-color 600ms;
 }
